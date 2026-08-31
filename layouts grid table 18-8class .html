@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LUXE Store</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+            height: 190px;
+
+            background-color: red;
+
+            display: grid;
+
+            grid-template-columns: 35% 30% 35%;
+
+            align-items: center;
+
+            padding: 30px;
+        }
+
+
+        /* STORE NAME */
+
+        .logo {
+            color: white;
+
+            font-family: Georgia, serif;
+
+            font-size: 25px;
+
+            font-weight: bold;
+        }
+
+
+        /* CENTER MENU */
+
+        .main-menu {
+            text-align: center;
+        }
+
+
+        .main-menu a {
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            margin: 0 10px;
+        }
+
+
+        .main-menu a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* ACCOUNT BUTTONS */
+
+        .account {
+            text-align: right;
+        }
+
+
+        .account button {
+            padding: 8px 18px;
+
+            margin-left: 8px;
+
+            border-radius: 20px;
+
+            border: 2px solid white;
+
+            background-color: transparent;
+
+            color: white;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+
+        .account button.register {
+            background-color: white;
+
+            color: red;
+        }
+
+
+        .account button:hover {
+            opacity: 0.8;
+        }
+
+
+        /* =========================
+           MAIN CONTENT
+        ========================= */
+
+        .main-content {
+
+            display: grid;
+
+            grid-template-columns: 25% 25% 25% 25%;
+
+            grid-template-rows: 280px 275px;
+
+        }
+
+
+        /* =========================
+           PRODUCT BOXES
+        ========================= */
+
+        .product-box {
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 20px;
+        }
+
+
+        .headphones {
+            background-color: yellow;
+        }
+
+
+        .shoes {
+            background-color: orange;
+        }
+
+
+        .jacket {
+            background-color: blue;
+        }
+
+
+        .product-box img {
+
+            width: 150px;
+
+            height: 190px;
+
+            object-fit: contain;
+
+            background-color: white;
+        }
+
+
+        .product-name {
+
+            margin-top: 8px;
+
+            font-weight: bold;
+
+            font-size: 14px;
+        }
+
+
+        .price {
+
+            color: red;
+
+            font-weight: bold;
+
+            margin-top: 5px;
+        }
+
+
+        /* =========================
+           SALE SECTION
+        ========================= */
+
+        .sale {
+
+            background-color: brown;
+
+            color: yellow;
+
+            text-align: center;
+
+            grid-column: 4;
+
+            grid-row: 1 / 3;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            padding-top: 170px;
+        }
+
+
+        .sale h2 {
+
+            font-family: Georgia, serif;
+
+            font-size: 28px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .sale img {
+
+            width: 100%;
+
+            height: 170px;
+
+            object-fit: cover;
+        }
+
+
+        .sale p {
+
+            color: white;
+
+            font-size: 12px;
+
+            margin-top: 10px;
+        }
+
+
+        /* =========================
+           FOUNDER SECTION
+        ========================= */
+
+        .founder {
+
+            grid-column: 1 / 4;
+
+            grid-row: 2;
+
+            background-color: #ffd900;
+
+            display: flex;
+
+            align-items: center;
+
+            padding: 20px;
+        }
+
+
+        .founder img {
+
+            width: 150px;
+
+            height: 235px;
+
+            object-fit: cover;
+
+            border-radius: 8px;
+
+            margin-right: 20px;
+        }
+
+
+        .founder-content {
+
+            color: #111;
+
+        }
+
+
+        .founder-title {
+
+            color: #806d00;
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            font-weight: bold;
+
+            margin-bottom: 10px;
+        }
+
+
+        .founder h2 {
+
+            font-size: 16px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .founder .quote {
+
+            font-style: italic;
+
+            margin-bottom: 12px;
+
+            font-size: 13px;
+        }
+
+
+        .founder p {
+
+            font-size: 12px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer {
+
+            height: 160px;
+
+            background-color: green;
+
+            color: white;
+
+            text-align: center;
+
+            padding-top: 65px;
+        }
+
+
+        .footer-links {
+
+            margin-bottom: 20px;
+        }
+
+
+        .footer-links a {
+
+            color: white;
+
+            text-decoration: none;
+
+            margin: 0 12px;
+
+            font-size: 12px;
+        }
+
+
+        .footer-links a:hover {
+
+            text-decoration: underline;
+        }
+
+
+        .copyright {
+
+            font-size: 12px;
+
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .header {
+
+                height: auto;
+
+                grid-template-columns: 1fr;
+
+                gap: 20px;
+
+                text-align: center;
+            }
+
+
+            .account {
+
+                text-align: center;
+            }
+
+
+            .main-menu {
+
+                text-align: center;
+            }
+
+
+            .main-content {
+
+                grid-template-columns: 1fr 1fr;
+
+                grid-template-rows: auto;
+
+            }
+
+
+            .sale {
+
+                grid-column: 1 / 3;
+
+                grid-row: auto;
+
+                padding-top: 30px;
+
+            }
+
+
+            .founder {
+
+                grid-column: 1 / 3;
+
+                grid-row: auto;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header class="header">
+
+
+        <!-- STORE NAME -->
+
+        <div class="logo">
+
+            LUXE Store
+
+        </div>
+
+
+        <!-- MENU -->
+
+        <nav class="main-menu">
+
+            <a href="#">Home</a>
+
+            <a href="#">About Us</a>
+
+        </nav>
+
+
+        <!-- ACCOUNT -->
+
+        <div class="account">
+
+            <button>Login</button>
+
+            <button class="register">Register</button>
+
+            <button>🛒 Cart (0)</button>
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================= -->
+
+    <main class="main-content">
+
+
+        <!-- WIRELESS HEADPHONES -->
+
+        <div class="product-box headphones">
+
+            <img
+                src="C:\Users\K.L.Chandra Sekhar\Downloads\iphone 16 pro.webp"
+                alt="iphone 16 pro">
+
+            <div class="product-name">
+
+                Iphone 16 pro | ₹1,19,999
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SPORTS SHOES -->
+
+        <div class="product-box shoes">
+
+            <img
+                src="C:\Users\K.L.Chandra Sekhar\Downloads\macbook pro 4.webp"
+                alt="macbook M4 pro">
+
+            <div class="product-name">
+
+                Macbook M4 pro | ₹79,499
+
+            </div>
+
+        </div>
+
+
+
+        <!-- LEATHER JACKET -->
+
+        <div class="product-box jacket">
+
+            <img
+                src="C:\Users\K.L.Chandra Sekhar\Downloads\airtag.webp"
+                alt="Aplle Air tag">
+
+            <div class="product-name">
+
+                Apple AirTag | ₹5,999
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =========================
+             SALE
+        ========================= -->
+
+        <div class="sale">
+
+            <h2>
+
+                SALE 50% OFF
+
+            </h2>
+
+
+            <img
+                src="C:\Users\K.L.Chandra Sekhar\Downloads\banner 4.webp"
+                alt="50 Percent Sale">
+
+
+            <p>
+
+                Limited time. Shop now & save big!
+
+            </p>
+
+        </div>
+
+
+
+        <!-- =========================
+             FOUNDER
+        ========================= -->
+
+        <section class="founder">
+
+
+            <img
+                src="C:\Users\K.L.Chandra Sekhar\Downloads\apple founder.webp"
+                alt="Founder">
+
+
+            <div class="founder-content">
+
+
+                <div class="founder-title">
+
+                    MEET THE FOUNDER
+
+                </div>
+
+
+                <h2>
+
+                    A Story of Passion & Purpose
+
+                </h2>
+
+
+                <div class="quote">
+
+                    "Luxury isn't a price tag — it's a feeling."
+
+                </div>
+
+
+                <p>
+
+                    Sophia Chen — fashion entrepreneur & writer
+                    with 12+ years in luxury retail.
+                    Featured in Vogue, Harper's Bazaar & Forbes.
+
+                </p>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer class="footer">
+
+
+        <div class="footer-links">
+
+            <a href="#">Home</a>
+
+            <a href="#">About Us</a>
+
+            <a href="#">Shop</a>
+
+            <a href="#">Blog</a>
+
+            <a href="#">Privacy Policy</a>
+
+            <a href="#">Terms of Service</a>
+
+            <a href="#">Contact Us</a>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 LUXE Store.
+            All rights reserved.
+            Designed with ♥ by Sophia Chen.
+
+        </div>
+
+
+    </footer>
+
+
+</div>
+
+
+</body>
+
+</html>

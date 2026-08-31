@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Demo Page</title>
+</head>
+
+<body>
+
+    <br><br>
+
+    <label>A = </label>
+    <input type="text" placeholder="Enter a value" id="text1">
+
+    <br><br>
+
+    <label>B = </label>
+    <input type="text" placeholder="Enter a value" id="text2">
+
+    <br><br>
+
+    <button type="button" onclick="fun1()">Add</button>
+
+    <h2>Internal Scripting</h2>
+
+    <p id="demo1">THE BASIC PARAGRAPH</p>
+
+    <script>
+        function fun1() {
+            var a = Number(document.getElementById("text1").value);
+            var b = Number(document.getElementById("text2").value);
+
+            var result = a + b;
+
+            document.getElementById("demo1").innerHTML =
+                "ADDITION OF A AND B = " + result;
+        }
+    </script>
+
+</body>
+</html>
