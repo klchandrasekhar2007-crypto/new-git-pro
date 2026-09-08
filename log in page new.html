@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>Javascript Form Validations</title>
+</head>
+<body>
+<div>
+<form onsubmit="return validateForm()">
+<h2><u>LOGIN PAGE</u></h2>
+<label>USERNAME:</label>
+<input type="text" id="uname" placeholder="Enter Username"/>
+<br/>
+<span id="uerror"></span>
+<br/>
+
+<label>PASSWORD:</label>
+<input type="password" id="pass" placeholder="Enter Password"/>
+<br/>
+<span id="perror"></span>
+<br/>
+<input type="submit" value="SUBMIT"/>
+
+</form>
+
+</div>
+
+<script>
+function validateForm()
+{
+let unm=document.getElementById("uname").value;
+let pwd=document.getElementById("pass").value;
+
+
+let uerr=document.getElementById("uerror");
+let perr=document.getElementById("perror");
+
+
+let valid=true;
+if(unm==="")
+{
+uerr.innerHTML="Enter USERNAME";
+valid=false;
+}
+else if(!unm.includes("@"))
+{
+uerr.innerHTML="Enter a Valid Email ID";
+valid=false;
+}
+else if(pwd==="")
+{
+perr.innerHTML="Enter Password";
+valid=false;
+}
+else if(pwd.length<8)
+{
+perr.innerHTML="Password should have 8 characters";
+valid=false;
+}
+else if(!pwd.match(/[0-9]/))
+{
+perr.innerHTML="Password should contain atleast one Number";
+valid=false;
+}
+else
+{
+alert("Login Successful");
+valid=true;
+}
+
+
+return valid;
+}
+</script>
+</body>
+</html>
