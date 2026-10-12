@@ -1,0 +1,40 @@
+```html
+<html>
+<body>
+
+<h2>Student Management</h2>
+
+<input id="name" placeholder="Name">
+<input id="id" placeholder="ID">
+<input id="course" placeholder="Course">
+<input id="marks" placeholder="Marks">
+
+<button onclick="addStudent()">Add</button>
+
+<table border="1" id="table">
+<tr>
+<th>Name</th><th>ID</th><th>Course</th><th>Marks</th><th>Action</th>
+</tr>
+</table>
+
+<script>
+function addStudent() {
+    let t = document.getElementById("table");
+    let r = t.insertRow();
+
+    r.insertCell(0).innerHTML = name.value;
+    r.insertCell(1).innerHTML = id.value;
+    r.insertCell(2).innerHTML = course.value;
+    r.insertCell(3).innerHTML = marks.value;
+    r.insertCell(4).innerHTML =
+    '<button onclick="deleteStudent(this)">Delete</button>';
+}
+
+function deleteStudent(btn) {
+    btn.parentElement.parentElement.remove();
+}
+</script>
+
+</body>
+</html>
+```
